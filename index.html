@@ -9,7 +9,9 @@
     <button onclick="sendMessage()">Send</button>
     <div id="chatLog"></div>
   </div>
-
+<div id="typing" style="display: none;" class="bot-message">
+  <em>Typing<span class="dots"></span></em>
+</div>
   <script>
     async function sendMessage() {
       const userMessage = document.getElementById("userInput").value;
