@@ -3,6 +3,19 @@
 <head>
   <title>AI Chatbot</title>
 </head>
+<style>
+  #typing .dots::after {
+  content: '';
+  display: inline-block;
+  animation: dots 1s steps(3, end) infinite;
+}
+@keyframes dots {
+  0% { content: ''; }
+  33% { content: '.'; }
+  66% { content: '..'; }
+  100% { content: '...'; }
+}
+</style>
 <body>
   <div id="chatbox">
     <input type="text" id="userInput" placeholder="Ask me..." />
@@ -25,6 +38,12 @@
       document.getElementById("chatLog").innerHTML += `<p><b>Bot:</b> ${data.reply}</p>`;
       document.getElementById("userInput").value = '';
     }
+    document.getElementById('typing').style.display = 'block';
+
+const response = await fetch(…); // your OpenAI fetch call
+
+document.getElementById('typing').style.display = 'none';
+
   </script>
 </body>
 </html>
